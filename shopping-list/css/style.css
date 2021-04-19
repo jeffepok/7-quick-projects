@@ -1,0 +1,36 @@
+h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+tr:hover{
+    background-color: #333;
+    color: white;
+}
+td{
+    width: 50px;
+    font-size: 1.8rem;
+    border: 3px solid #333;
+    text-align: center;
+    padding: 5px 10px;
+}
+input{
+    font-size: 1.8rem;
+    width: 200px;
+    color: green;
+    padding: 0px 10px;
+}
+button{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+#recipeList{
+    display: flex;
+}
+#deltedItems{
+    margin-left: auto;
+    margin-right: 10%;
+}
