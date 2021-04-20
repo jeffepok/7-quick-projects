@@ -15,43 +15,83 @@
 
 </head>
 
-<body ng-controller="ListController">
-    <h1>Example #1</h1>
-    <h1>with Angular Victor</h1>
-    <hr>
+<body class="d-flex" ng-controller="ListController">
+    <div class="d-flex flex-column p-3 bg-light" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          <span class="fs-4">Navigation</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link link-dark ">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="../shopping-list/index.html" class="nav-link  active">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+              Shopping List
+            </a>
+          </li>
+          <li>
+            <a href="../rembrandt's-paintings/index.html" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+              Rembrandt's Paintings
+            </a>
+          </li>
+          <li>
+            <a href="../three-composers/index.html" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+              Three Composers
+            </a>
+          </li>
+          <li>
+            <a href="../top-singers/index.html" class="nav-link link-dark">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+              Top Singers
+            </a>
+          </li>
+        </ul>
+        <hr>
+  
+      </div>
 
-
-        <div id="recipeList">
-            <div>
-                <h3>Shopping List</h3>
-                <h4>So far <big>{{list.length}}</big> items</h4>
-                <table id="activeItems">
-                    <tr ng-repeat="item in list">
-                        <td>{{$index + 1}}</td>
-                        <td>{{item}}</td>
-                        <td> <button id="activeDelBtn" class="btn btn-danger" ng-click="remove($event, item)">X</button> </td>
-                    </tr>
-                </table>
+      <div class="mx-auto w-50">
+        <h1 class="text-center">Shopping List</h1>
+        <hr>
+            <div id="recipeList">
+                <div>
+                    <h3>Shopping List</h3>
+                    <h4>So far <big>{{list.length}}</big> items</h4>
+                    <table id="activeItems">
+                        <tr ng-repeat="item in list">
+                            <td>{{$index + 1}}</td>
+                            <td>{{item}}</td>
+                            <td> <button id="activeDelBtn" class="btn btn-danger" ng-click="remove($event, item)">X</button> </td>
+                        </tr>
+                    </table>
+                </div>
+    
+                <div id="deltedItems">
+                    <h3>Deleted List</h3>
+                    <h4>So far <big>{{deleted.length}}</big> items</h4>
+                    <table >
+                        <tr ng-repeat="item in deleted">
+                            <td>{{$index + 1}}</td>
+                            <td>{{item}}</td>
+                            <td> <button id="deletedDelBtn"class="btn btn-danger" ng-click="remove($event, item)">X</button> </td>
+                        </tr>
+                    </table>
+                </div>
+    
+    
             </div>
-
-            <div id="deltedItems">
-                <h3>Deleted List</h3>
-                <h4>So far <big>{{deleted.length}}</big> items</h4>
-                <table >
-                    <tr ng-repeat="item in deleted">
-                        <td>{{$index + 1}}</td>
-                        <td>{{item}}</td>
-                        <td> <button id="deletedDelBtn"class="btn btn-danger" ng-click="remove($event, item)">X</button> </td>
-                    </tr>
-                </table>
-            </div>
-
-
-        </div>
-
-    <hr>
-    <input type="text" ng-model="newItem">
-    <button class="btn btn-success" ng-click="addItem(newItem)"> add </button>
+        <hr>
+        <input type="text" ng-model="newItem">
+        <button class="btn btn-success" ng-click="addItem(newItem)"> add </button>
+      </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
